@@ -893,30 +893,37 @@
     </ul>
 
     <!-- Popup 1 -->
-    <div id="popup1" class="popup-overlay">
-      <div class="popup-content">
-        <h3>Data Analysis and Visualization Foundations</h3>
+    <div id="popup1" class="modal-container">
+      <div class="overlay active" onclick="closePopup('popup1')"></div>
+      <div class="testimonials-modal">
+        <button class="modal-close-btn" onclick="closePopup('popup1')">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+        <h3 class="modal-title">Data Analysis and Visualization Foundations</h3>
         <p>Issued by Coursera | University of Michigan</p>
         <p>Skills: Data visualization, Excel analytics, basic storytelling with data.</p>
         <a href="#" target="_blank">View Certificate</a>
-        <button onclick="closePopup('popup1')">Close</button>
       </div>
     </div>
 
     <!-- Popup 2 -->
-    <div id="popup2" class="popup-overlay">
-      <div class="popup-content">
-        <h3>Digital Marketing Strategy and Planning</h3>
+    <div id="popup2" class="modal-container">
+      <div class="overlay active" onclick="closePopup('popup2')"></div>
+      <div class="testimonials-modal">
+        <button class="modal-close-btn" onclick="closePopup('popup2')">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+        <h3 class="modal-title">Digital Marketing Strategy and Planning</h3>
         <p>Issued by Coursera | Digital Marketing Institute</p>
         <p>Skills: Campaign planning, channel strategy, marketing execution.</p>
         <a href="#" target="_blank">View Certificate</a>
-        <button onclick="closePopup('popup2')">Close</button>
       </div>
     </div>
 
   </section>
 
 </article>
+
 
 <!-- CSS for Certifications -->
 <style>
@@ -954,48 +961,105 @@
   color: #ffffff;
 }
 
-/* Popup Style */
-.popup-overlay {
-  display: none;
+/* Popup style adjusted to match modal-container */
+.modal-container {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  z-index: 20;
+  pointer-events: none;
+  visibility: hidden;
 }
 
-.popup-content {
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 10px;
-  width: 90%;
+.modal-container.active {
+  pointer-events: all;
+  visibility: visible;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: hsl(0, 0%, 5%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+.overlay.active {
+  opacity: 0.8;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.testimonials-modal {
+  background: #2a2a2a;
+  position: relative;
+  padding: 20px;
+  margin: 15px 12px;
+  border: 1px solid #333;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transform: scale(1.2);
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 2;
+  color: white;
   max-width: 500px;
+  width: 90%;
   text-align: center;
 }
 
-.popup-content button {
-  margin-top: 15px;
-  background: #ffcc00;
+.modal-container.active .testimonials-modal {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #3d3d3d;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  opacity: 0.7;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
   cursor: pointer;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  opacity: 1;
 }
 </style>
 
 <!-- JavaScript for Popup -->
 <script>
 function openPopup(id) {
-  document.getElementById(id).style.display = 'flex';
+  document.getElementById(id).classList.add('active');
 }
 
 function closePopup(id) {
-  document.getElementById(id).style.display = 'none';
+  document.getElementById(id).classList.remove('active');
 }
 </script>
-
 
       #asd
 
