@@ -894,7 +894,7 @@
 
     <!-- Popup 1 -->
     <div id="popup1" class="modal-container">
-      <div class="overlay active" onclick="closePopup('popup1')"></div>
+      <div class="overlay" onclick="closePopup('popup1')"></div>
       <div class="testimonials-modal">
         <button class="modal-close-btn" onclick="closePopup('popup1')">
           <ion-icon name="close-outline"></ion-icon>
@@ -908,7 +908,7 @@
 
     <!-- Popup 2 -->
     <div id="popup2" class="modal-container">
-      <div class="overlay active" onclick="closePopup('popup2')"></div>
+      <div class="overlay" onclick="closePopup('popup2')"></div>
       <div class="testimonials-modal">
         <button class="modal-close-btn" onclick="closePopup('popup2')">
           <ion-icon name="close-outline"></ion-icon>
@@ -923,9 +923,7 @@
   </section>
 
 </article>
-
-
-<!-- CSS for Certifications -->
+      
 <style>
 .certification-list {
   display: grid;
@@ -1050,7 +1048,6 @@
 }
 </style>
 
-<!-- JavaScript for Popup -->
 <script>
 function openPopup(id) {
   document.getElementById(id).classList.add('active');
@@ -1060,8 +1057,6 @@ function closePopup(id) {
   document.getElementById(id).classList.remove('active');
 }
 </script>
-
-      #asd
 
       <!--
         - #BLOG
