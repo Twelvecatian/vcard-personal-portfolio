@@ -860,8 +860,6 @@
       #asd
 <article class="certifications" data-page="certifications">
 
-        <article class="certifications" data-page="certifications">
-
   <header>
     <h2 class="h2 article-title">Certifications</h2>
   </header>
@@ -900,7 +898,7 @@
         <h3>Data Analysis and Visualization Foundations</h3>
         <p>Issued by Coursera | University of Michigan</p>
         <p>Skills: Data visualization, Excel analytics, basic storytelling with data.</p>
-        <a href="https://coursera.org/share/a32e2555a30a5837f8c5cd3c97f03e3c" target="_blank">View Certificate</a>
+        <a href="#" target="_blank">View Certificate</a>
         <button onclick="closePopup('popup1')">Close</button>
       </div>
     </div>
@@ -911,15 +909,24 @@
         <h3>Digital Marketing Strategy and Planning</h3>
         <p>Issued by Coursera | Digital Marketing Institute</p>
         <p>Skills: Campaign planning, channel strategy, marketing execution.</p>
-        <a href="https://www.coursera.org/account/accomplishments/specialization/9WLNWLLCLQPW" target="_blank">View Certificate</a>
+        <a href="#" target="_blank">View Certificate</a>
         <button onclick="closePopup('popup2')">Close</button>
       </div>
-  <style>
+    </div>
+
+  </section>
+
+</article>
+
+<!-- CSS for Certifications -->
+<style>
 .certification-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   margin-top: 30px;
+  padding-left: 0;
+  list-style: none;
 }
 
 .certification-item {
@@ -943,6 +950,7 @@
 .certification-title {
   margin-top: 10px;
   font-size: 1.1rem;
+  font-weight: bold;
   color: #ffffff;
 }
 
@@ -955,7 +963,7 @@
   background: rgba(0, 0, 0, 0.7);
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 9999;
 }
 
 .popup-content {
@@ -976,6 +984,8 @@
   cursor: pointer;
 }
 </style>
+
+<!-- JavaScript for Popup -->
 <script>
 function openPopup(id) {
   document.getElementById(id).style.display = 'flex';
@@ -986,14 +996,6 @@ function closePopup(id) {
 }
 </script>
 
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
 
       #asd
 
