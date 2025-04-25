@@ -855,6 +855,152 @@
 
 
 
+#Boom
+
+ <!--
+        - #PORTFOLIO
+      -->
+
+     <article class="certifications" data-page="certifications">
+
+  <header>
+    <h2 class="h2 article-title">Certifications</h2>
+  </header>
+
+  <section class="projects">
+
+    <ul class="certification-list">
+
+      <!-- Certification 1 -->
+      <li class="certification-item" onclick="openPopup('popup1')">
+        <figure class="certification-img">
+          <div class="certification-icon-box">
+            <ion-icon name="eye-outline"></ion-icon>
+          </div>
+          <img src="./assets/images/cert1-thumbnail.png" alt="Data Analysis" loading="lazy">
+        </figure>
+        <h3 class="certification-title">Data Analysis Foundations</h3>
+      </li>
+
+      <!-- Certification 2 -->
+      <li class="certification-item" onclick="openPopup('popup2')">
+        <figure class="certification-img">
+          <div class="certification-icon-box">
+            <ion-icon name="eye-outline"></ion-icon>
+          </div>
+          <img src="./assets/images/cert2-thumbnail.png" alt="Digital Marketing" loading="lazy">
+        </figure>
+        <h3 class="certification-title">Digital Marketing Strategy</h3>
+      </li>
+
+    </ul>
+
+    <!-- Popup 1 -->
+    <div id="popup1" class="popup-overlay">
+      <div class="popup-content">
+        <h3>Data Analysis and Visualization Foundations</h3>
+        <p>Issued by Coursera | University of Michigan</p>
+        <p>Skills: Data visualization, Excel analytics, basic storytelling with data.</p>
+        <a href="https://coursera.org/share/a32e2555a30a5837f8c5cd3c97f03e3c" target="_blank">View Certificate</a>
+        <button onclick="closePopup('popup1')">Close</button>
+      </div>
+    </div>
+
+    <!-- Popup 2 -->
+    <div id="popup2" class="popup-overlay">
+      <div class="popup-content">
+        <h3>Digital Marketing Strategy and Planning</h3>
+        <p>Issued by Coursera | Digital Marketing Institute</p>
+        <p>Skills: Campaign planning, channel strategy, marketing execution.</p>
+        <a href="https://www.coursera.org/account/accomplishments/specialization/9WLNWLLCLQPW" target="_blank">View Certificate</a>
+        <button onclick="closePopup('popup2')">Close</button>
+      </div>
+    </div>
+
+    <style>
+.certification-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.certification-item {
+  background: #1e1e1e;
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.certification-item:hover {
+  background: #292929;
+}
+
+.certification-img img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.certification-title {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+/* Popup Style */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.popup-content button {
+  margin-top: 15px;
+  background: #ffcc00;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+</style>
+<script>
+function openPopup(id) {
+  document.getElementById(id).style.display = 'flex';
+}
+
+function closePopup(id) {
+  document.getElementById(id).style.display = 'none';
+}
+</script>
+
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+      
+      
+#Endless
 
 
       <!--
@@ -1095,10 +1241,6 @@
     </div>
 
   </main>
-
-
-
-
 
 
   <!--
