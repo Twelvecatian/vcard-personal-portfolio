@@ -187,8 +187,6 @@
             <button class="navbar-link" data-nav-link>Contact</button>
           </li>
           
-          <div id="google_translate_element"></div>
-          
         </ul>
 
       </nav>
@@ -1308,17 +1306,80 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-  <!-- Google Translate script -->
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-      { pageLanguage: 'en', includedLanguages: 'en,vi', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
-      'google_translate_element'
-    );
-  }
-</script>
+  <script>
+  const translations = {
+    en: {
+      aboutMe: "About me",
+      resume: "Resume",
+      portfolio: "Portfolio",
+      certification: "Certification", 
+      blog: "Blog",
+      contact: "Contact",
+      showContacts: "Show Contacts",
+      email: "Email",
+      phone: "Phone",
+      birthday: "Birthday",
+      location: "Location",
+      aboutMeText: "I'm Trần Quốc Vũ, a digital marketing graduate with a strong interest in data, business strategy, and user behavior. My academic background and hands-on experience have shaped my ability to research, analyze, and adapt quickly in fast-changing environments."
+    },
+    vi: {
+      aboutMe: "Giới thiệu",
+      resume: "Sơ yếu lý lịch",
+      portfolio: "Dự án",
+      certification: "Chứng chỉ",
+      blog: "Blog", 
+      contact: "Liên hệ",
+      showContacts: "Hiện thông tin",
+      email: "Email",
+      phone: "Điện thoại",
+      birthday: "Ngày sinh",
+      location: "Địa chỉ",
+      aboutMeText: "Tôi là Trần Quốc Vũ, một cử nhân marketing số với niềm đam mê về dữ liệu, chiến lược kinh doanh và hành vi người dùng. Nền tảng học thuật và kinh nghiệm thực tế đã giúp tôi phát triển khả năng nghiên cứu, phân tích và thích nghi nhanh trong môi trường thay đổi."
+    }
+  };
 
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  function changeLanguage(lang) {
+    localStorage.setItem('selectedLanguage', lang);
+    
+    // Cập nhật các nút điều hướng
+    document.querySelectorAll('[data-nav-link]').forEach(element => {
+      const key = element.textContent.toLowerCase().replace(/\s+/g, '');
+      if (translations[lang][key]) {
+        element.textContent = translations[lang][key];
+      }
+    });
+
+    // Cập nhật nút Show Contacts
+    document.querySelector('.info_more-btn span').textContent = translations[lang].showContacts;
+
+    // Cập nhật các tiêu đề liên hệ
+    document.querySelectorAll('.contact-title').forEach(element => {
+      const key = element.textContent.toLowerCase();
+      if (translations[lang][key]) {
+        element.textContent = translations[lang][key];
+      }
+    });
+
+    // Cập nhật phần About Me
+    const aboutMeTitle = document.querySelector('.article-title');
+    if (aboutMeTitle) {
+      aboutMeTitle.textContent = translations[lang].aboutMe;
+    }
+
+    // Cập nhật nội dung About Me
+    const aboutMeText = document.querySelector('.about-text p:first-child');
+    if (aboutMeText) {
+      aboutMeText.textContent = translations[lang].aboutMeText;
+    }
+  }
+
+  // Áp dụng ngôn ngữ đã lưu khi tải trang
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+    document.getElementById('languageSelect').value = savedLanguage;
+    changeLanguage(savedLanguage);
+  });
+  </script>
 
 </body>
 
