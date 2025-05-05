@@ -23,6 +23,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Thêm script translations trước script.js -->
+  <script src="./assets/js/translations.json" type="application/json"></script>
+  <script src="./assets/js/script.js" defer></script>
 </head>
 
 <body>
@@ -140,6 +144,13 @@
           </li>
 
         </ul>
+
+        <div class="separator"></div>
+
+        <div class="language-switcher">
+          <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')" id="en-btn">EN</button>
+          <button class="lang-btn" data-lang="vi" onclick="changeLanguage('vi')" id="vi-btn">VI</button>
+        </div>
 
       </div>
 
@@ -336,7 +347,7 @@
 
         <section class="testimonials">
 
-          <h3 class="h3 testimonials-title">Testimonials</h3>
+          <h3 class="h3 testimonials-title" data-translate="testimonialsTitle">Testimonials</h3>
 
           <ul class="testimonials-list has-scrollbar">
 
@@ -1306,80 +1317,64 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-  <script>
-  const translations = {
-    en: {
-      aboutMe: "About me",
-      resume: "Resume",
-      portfolio: "Portfolio",
-      certification: "Certification", 
-      blog: "Blog",
-      contact: "Contact",
-      showContacts: "Show Contacts",
-      email: "Email",
-      phone: "Phone",
-      birthday: "Birthday",
-      location: "Location",
-      aboutMeText: "I'm Trần Quốc Vũ, a digital marketing graduate with a strong interest in data, business strategy, and user behavior. My academic background and hands-on experience have shaped my ability to research, analyze, and adapt quickly in fast-changing environments."
-    },
-    vi: {
-      aboutMe: "Giới thiệu",
-      resume: "Sơ yếu lý lịch",
-      portfolio: "Dự án",
-      certification: "Chứng chỉ",
-      blog: "Blog", 
-      contact: "Liên hệ",
-      showContacts: "Hiện thông tin",
-      email: "Email",
-      phone: "Điện thoại",
-      birthday: "Ngày sinh",
-      location: "Địa chỉ",
-      aboutMeText: "Tôi là Trần Quốc Vũ, một cử nhân marketing số với niềm đam mê về dữ liệu, chiến lược kinh doanh và hành vi người dùng. Nền tảng học thuật và kinh nghiệm thực tế đã giúp tôi phát triển khả năng nghiên cứu, phân tích và thích nghi nhanh trong môi trường thay đổi."
-    }
-  };
+<script>
+async function loadTranslations() {
+  try {
+    const response = await fetch('./assets/js/translations.json');
+    if (!response.ok) throw new Error('Không thể tải file translations');
+    return await response.json();
+  } catch (error) {
+    console.error('Lỗi khi tải translations:', error);
+    return null;
+  }
+}
 
-  function changeLanguage(lang) {
-    localStorage.setItem('selectedLanguage', lang);
-    
-    // Cập nhật các nút điều hướng
-    document.querySelectorAll('[data-nav-link]').forEach(element => {
-      const key = element.textContent.toLowerCase().replace(/\s+/g, '');
-      if (translations[lang][key]) {
-        element.textContent = translations[lang][key];
-      }
-    });
+let translations = null;
 
-    // Cập nhật nút Show Contacts
-    document.querySelector('.info_more-btn span').textContent = translations[lang].showContacts;
-
-    // Cập nhật các tiêu đề liên hệ
-    document.querySelectorAll('.contact-title').forEach(element => {
-      const key = element.textContent.toLowerCase();
-      if (translations[lang][key]) {
-        element.textContent = translations[lang][key];
-      }
-    });
-
-    // Cập nhật phần About Me
-    const aboutMeTitle = document.querySelector('.article-title');
-    if (aboutMeTitle) {
-      aboutMeTitle.textContent = translations[lang].aboutMe;
-    }
-
-    // Cập nhật nội dung About Me
-    const aboutMeText = document.querySelector('.about-text p:first-child');
-    if (aboutMeText) {
-      aboutMeText.textContent = translations[lang].aboutMeText;
-    }
+async function changeLanguage(lang) {
+  if (!translations) {
+    translations = await loadTranslations();
   }
 
-  // Áp dụng ngôn ngữ đã lưu khi tải trang
-  document.addEventListener('DOMContentLoaded', () => {
-    const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
-    document.getElementById('languageSelect').value = savedLanguage;
-    changeLanguage(savedLanguage);
+  if (!translations || !translations[lang]) {
+    console.error('Không tìm thấy bản dịch cho ngôn ngữ:', lang);
+    return;
+  }
+
+  // Cập nhật trạng thái active cho nút
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.remove('active');
   });
-  </script>
+  document.getElementById(`${lang}-btn`).classList.add('active');
+
+  // Cập nhật navigation
+  document.querySelectorAll('[data-nav-link]').forEach(element => {
+    const key = element.textContent.toLowerCase().trim();
+    if (translations[lang].nav[key]) {
+      element.textContent = translations[lang].nav[key];
+    }
+  });
+
+  // Cập nhật about section
+  const aboutTitle = document.querySelector('.article-title');
+  if (aboutTitle) {
+    aboutTitle.textContent = translations[lang].about.title;
+  }
+
+  // Lưu ngôn ngữ đã chọn
+  localStorage.setItem('selectedLanguage', lang);
+
+  // Reload trang để áp dụng thay đổi
+  location.reload();
+}
+
+// Khởi tạo khi trang tải xong
+document.addEventListener('DOMContentLoaded', async () => {
+  translations = await loadTranslations();
+  const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+  document.getElementById(`${savedLang}-btn`).classList.add('active');
+});
+</script>
 
 </body>
 

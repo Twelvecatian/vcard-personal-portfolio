@@ -454,6 +454,35 @@ main {
   #NAVBAR
 \*-----------------------------------*/
 
+.language-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.lang-btn {
+  background: var(--eerie-black-2);
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: var(--light-gray);
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid var(--jet);
+  transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+  border-color: var(--orange-yellow-crayola);
+  color: var(--orange-yellow-crayola);
+}
+
+.lang-btn.active {
+  background: var(--bg-gradient-yellow-1);
+  color: var(--orange-yellow-crayola);
+  border-color: var(--orange-yellow-crayola);
+}
+
 .navbar {
   position: fixed;
   bottom: 0;
