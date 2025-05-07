@@ -73,6 +73,69 @@
     },
     "clients": {
       "title": "Tools I Use"
+    },
+    "resume": {
+      "title": "Resume",
+      "education": {
+        "title": "Education",
+        "item1": {
+          "title": "Bachelor of Business Administration – Digital Marketing",
+          "school": "FPT University",
+          "time": "2020 — 2025",
+          "description": "• Focused on marketing fundamentals, digital strategy, integrated communication, consumer insight, and omnichannel marketing. Gained practical knowledge in content creation, digital advertising, and marketing research.\n\n• GPA: 3.2/4.0\n\n• Achieved \"Honorable Student\" title in 3 semesters"
+        }
+      },
+      "experience": {
+        "title": "Experience",
+        "item1": {
+          "title": "Digital Marketing Intern/ Collaborator",
+          "company": "HTV News, Ho Chi Minh City",
+          "time": "Dec 2023 – May 2024",
+          "description": "• Managed HTV News' official Facebook page, contributing to a 25% follower increase within 5 months through targeted content and strategic scheduling.\n\n• Produced and edited digital content for social media and television news, including images, captions, and short-form videos.\n\n• Planned and published daily posts to ensure audience engagement and brand consistency across platforms.\n\n• Utilized social media analytics tools to track performance, analyze engagement trends, and report key insights to the editorial team."
+        },
+        "item2": {
+          "title": "Marketing Executive",
+          "company": "Tasi Pet Shop, Ho Chi Minh City",
+          "time": "Nov 2024 – Apr 2025",
+          "description": "• Built and managed the shop's Facebook and Instagram presence, including content planning, visual design, and post scheduling.\n\n• Captured and edited pet photos for content and client engagement; created story-based highlights to showcase services and happy customers.\n\n• Wrote SEO-friendly blog posts and landing page content for the shop's website, improving organic visibility and keyword rankings.\n\n• Monitored messages and comments to maintain high engagement and timely customer response."
+        }
+      }
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "filters": {
+        "all": "All",
+        "design": "Design",
+        "marketing": "Marketing Projects",
+        "dataAnalysis": "Data Analysis Projects"
+      },
+      "selectCategory": "Select category",
+      "projects": {
+        "poster1": {
+          "title": "Poster 1",
+          "category": "Design"
+        },
+        "katinat": {
+          "title": "Katinat's Catalogue",
+          "category": "Design"
+        },
+        "nike": {
+          "title": "Nike's Poster",
+          "category": "Design"
+        },
+        "zhealth": {
+          "title": "Zhealth",
+          "category": "Marketing Projects"
+        },
+        "mamFood": {
+          "title": "Mam Food",
+          "category": "Marketing Projects"
+        },
+        "dataAnalysis": {
+          "title": "Data Analysis",
+          "category": "Data Analysis Projects"
+        }
+      }
     }
   },
   "vi": {
@@ -146,12 +209,75 @@
         },
         {
           "title": "Đam Mê Công Nghệ Blockchain",
-          "text": "Sự quan tâm của tôi đến tiền điện tử bắt đầu từ niềm tò mò, nhưng đã phát triển thành một dự án cá nhân lâu dài. Tôi nghiên cứu các dự án mới, tìm hiểu công nghệ blockchain và đầu tư một cách chiến lược. Qua đó, tôi đã phát triển hiểu biết thực tiễn về động lực thị trường, quản lý rủi ro và phân tích dữ liệu - những kỹ năng trực tiếp nâng cao hinh lực phân tích của tôi."
+          "text": "Sự quan tâm của tôi đến tiền điện tử bắt đầu từ niềm tò mòy, nhưng đã phát triển thành một dự án cá nhân lâu dài. Tôi nghiên cứu các dự án mới, tìm hiểu công nghệ blockchain và đầu tư một cách chiến lược. Qua đó, tôi đã phát triển hiểu biết thực tiễn về động lực thị trường, quản lý rủi ro và phân tích dữ liệu - những kỹ năng trực tiếp nâng cao hinh lực phân tích của tôi."
         }
       ]
-    }
-  },
-  "clients": {
-    "title": "Công Cụ Sử Dụng"
+     },
+          "clients": {
+            "title": "Công cụ tôi sử dụng"
+          },
+          "resume": {
+            "title": "Hồ sơ",
+            "education": {
+              "title": "Học vấn",
+              "item1": {
+                "title": "Cử nhân Quản trị Kinh doanh – Marketing số",
+                "school": "Đại học FPT",
+                "time": "2020 — 2025",
+                "description": "• Tập trung vào các nền tảng marketing, chiến lược số, truyền thông tích hợp, thấu hiểu người tiêu dùng và marketing đa kênh. Có kiến thức thực tiễn về sáng tạo nội dung, quảng cáo số và nghiên cứu thị trường.\n\n• GPA: 3.2/4.0\n\n• Đạt danh hiệu \"Sinh viên giỏi\" trong 3 học kỳ"
+              }
+            },
+            "experience": {
+              "title": "Kinh nghiệm",
+              "item1": {
+                "title": "Thực tập sinh/ Cộng tác viên Marketing số",
+                "company": "HTV News, TP. Hồ Chí Minh",
+                "time": "12/2023 – 05/2024",
+                "description": "• Quản lý trang Facebook chính thức của HTV News, giúp tăng 25% lượng người theo dõi trong 5 tháng nhờ nội dung phù hợp và đăng bài chiến lược.\n\n• Sản xuất và biên tập nội dung số cho mạng xã hội và bản tin truyền hình, bao gồm hình ảnh, chú thích và video ngắn.\n\n• Lên kế hoạch và đăng bài hàng ngày nhằm duy trì sự tương tác và nhất quán thương hiệu trên các nền tảng.\n\n• Sử dụng công cụ phân tích mạng xã hội để theo dõi hiệu suất, phân tích xu hướng tương tác và báo cáo dữ liệu cho nhóm biên tập."
+              },
+              "item2": {
+                "title": "Nhân viên Marketing",
+                "company": "Tasi Pet Shop, TP. Hồ Chí Minh",
+                "time": "11/2024 – 04/2025",
+                "description": "• Xây dựng và quản lý fanpage Facebook và Instagram của cửa hàng: lập kế hoạch nội dung, thiết kế hình ảnh, và lên lịch đăng bài.\n\n• Chụp và chỉnh sửa ảnh thú cưng để đăng bài và tăng tương tác với khách hàng; tạo highlight theo câu chuyện để giới thiệu dịch vụ và khách hàng hài lòng.\n\n• Viết bài blog và nội dung trang đích chuẩn SEO cho website của shop, giúp tăng khả năng hiển thị tự nhiên và thứ hạng từ khóa.\n\n• Theo dõi tin nhắn và bình luận nhằm duy trì sự tương tác cao và phản hồi khách hàng kịp thời."
+              }
+            }
+          },
+          "portfolio": {
+      "title": "Dự án",
+      "filters": {
+        "all": "Tất cả",
+        "design": "Thiết kế",
+        "marketing": "Dự án Marketing",
+        "dataAnalysis": "Dự án Phân tích dữ liệu"
+      },
+      "selectCategory": "Chọn danh mục",
+      "projects": {
+        "poster1": {
+          "title": "Poster 1",
+          "category": "Thiết kế"
+        },
+        "katinat": {
+          "title": "Catalogue Katinat",
+          "category": "Thiết kế"
+        },
+        "nike": {
+          "title": "Poster Nike",
+          "category": "Thiết kế"
+        },
+        "zhealth": {
+          "title": "Zhealth",
+          "category": "Dự án Marketing"
+        },
+        "mamFood": {
+          "title": "Mam Food",
+          "category": "Dự án Marketing"
+        },
+        "dataAnalysis": {
+          "title": "Phân tích dữ liệu",
+          "category": "Dự án Phân tích dữ liệu"
+        }
+      }
+        }
   }
 }

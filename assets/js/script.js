@@ -171,10 +171,24 @@ async function loadTranslations() {
     // Áp dụng ngôn ngữ đã lưu hoặc mặc định
     const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
     await changeLanguage(savedLanguage);
+    return translations;
   } catch (error) {
     console.error('Lỗi khi tải translations:', error);
+    return null;
   }
 }
+
+// Đảm bảo translations được tải trước khi thay đổi ngôn ngữ
+async function initializeLanguage() {
+  translations = await loadTranslations();
+  if (!translations) {
+    console.error('Không thể khởi tạo translations');
+    return;
+  }
+}
+
+// Khởi tạo khi trang tải xong
+document.addEventListener('DOMContentLoaded', initializeLanguage);
 
 // Hàm thay đổi ngôn ngữ
 async function changeLanguage(lang) {
@@ -405,28 +419,65 @@ async function changeLanguage(lang) {
     console.log('Đã thay đổi ngôn ngữ thành:', lang);
     console.log('Translations loaded:', translations[lang]);
 
+    // Cập nhật Resume section
+    if (translations[lang].resume) {
+      try {
+        // Cập nhật tiêu đề chính Resume
+        const resumeTitle = document.querySelector('.article-title[data-resume]');
+        if (resumeTitle) {
+          resumeTitle.textContent = translations[lang].resume.title;
+        }
+    
+        // Cập nhật tiêu đề Education
+        const educationTitle = document.querySelector('.h3[data-education]');
+        if (educationTitle) {
+          educationTitle.textContent = translations[lang].resume.education.title;
+        }
+    
+        // Cập nhật thông tin học vấn
+        const educationItem = document.querySelector('.timeline-item');
+        if (educationItem && translations[lang].resume.education.item1) {
+          const degree = educationItem.querySelector('.h4.timeline-item-title');
+          const school = educationItem.querySelector('em');
+          const description = educationItem.querySelector('.timeline-text');
+          
+          if (degree) degree.textContent = translations[lang].resume.education.item1.title;
+          if (school) school.textContent = translations[lang].resume.education.item1.school;
+          if (description) description.textContent = translations[lang].resume.education.item1.description;
+        }
+    
+        // Cập nhật tiêu đề Experience
+        const experienceTitle = document.querySelector('.h3[data-experience]');
+        if (experienceTitle) {
+          experienceTitle.textContent = translations[lang].resume.experience.title;
+        }
+    
+        // Cập nhật thông tin kinh nghiệm
+        const experienceItems = document.querySelectorAll('.timeline-item');
+        if (experienceItems[1] && translations[lang].resume.experience.item1) {
+          const title1 = experienceItems[1].querySelector('.h4.timeline-item-title');
+          const company1 = experienceItems[1].querySelector('em');
+          const description1 = experienceItems[1].querySelector('.timeline-text');
+          
+          if (title1) title1.textContent = translations[lang].resume.experience.item1.title;
+          if (company1) company1.textContent = translations[lang].resume.experience.item1.company;
+          if (description1) description1.textContent = translations[lang].resume.experience.item1.description;
+        }
+        
+        if (experienceItems[2] && translations[lang].resume.experience.item2) {
+          const title2 = experienceItems[2].querySelector('.h4.timeline-item-title');
+          const company2 = experienceItems[2].querySelector('em');
+          const description2 = experienceItems[2].querySelector('.timeline-text');
+          
+          if (title2) title2.textContent = translations[lang].resume.experience.item2.title;
+          if (company2) company2.textContent = translations[lang].resume.experience.item2.company;
+          if (description2) description2.textContent = translations[lang].resume.experience.item2.description;
+        }
+      } catch (error) {
+        console.error('Lỗi khi cập nhật Resume section:', error);
+      }
+    }
   } catch (error) {
     console.error('Lỗi khi thay đổi ngôn ngữ:', error);
   }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  // Load translations khi trang tải xong
-  loadTranslations();
-
-  // Thêm event listeners cho các nút ngôn ngữ
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const lang = btn.getAttribute('data-lang');
-      if (lang) {
-        changeLanguage(lang);
-      }
-    });
-  });
-});
-
-// Cập nhật Tools I Use section
-const toolsTitle = document.querySelector('.clients-title');
-if (toolsTitle && translations[lang].toolsSection) {
-toolsTitle.textContent = translations[lang].toolsSection.title;
 }

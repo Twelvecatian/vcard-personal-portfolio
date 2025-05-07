@@ -1909,3 +1909,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
+.timeline-text {
+  white-space: pre-line;
+}
