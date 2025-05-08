@@ -72,7 +72,7 @@
       ]
     },
     "clients": {
-      "title": "Tools I Use"
+      "title": "Tools"
     },
     "resume": {
       "title": "Resume",
@@ -136,7 +136,49 @@
           "category": "Data Analysis Projects"
         }
       }
+    },
+    "certification": {
+      "title": "Certification"
+    },
+    "blog": {
+  "title": "Blog",
+  "post1": {
+    "category": "Health",
+    "title": "Think Positive, Do Positive",
+    "description": "How I Stay Positive: Daily Habits That Keep My Mind Happy & Focused"
+  },
+  "post2": {
+    "category": "Health", 
+    "title": "Be Yourself!",
+    "description": "\"Are we alive?\""
+  },
+  "post3": {
+    "category": "Health",
+    "title": "Depression",
+    "description": "Could You Be Experiencing Depression Without Realizing It?"
+  },
+  "post4": {
+    "category": "Health",
+    "title": "5 Stages of Growth",
+    "description": "Robert Kegan's 5 Stages of Personal Growth: Which Level Are You At?"
+  }
+},
+"contact": {
+    "title": "Contact",
+    "form": {
+      "title": "Contact Form",
+      "fullname": {
+        "placeholder": "Full name"
+      },
+      "email": {
+        "placeholder": "Email address"
+      },
+      "message": {
+        "placeholder": "Your Message"
+      },
+      "submit": "Send Message"
     }
+  }
   },
   "vi": {
     "nav": {
@@ -214,7 +256,7 @@
       ]
      },
           "clients": {
-            "title": "Công cụ tôi sử dụng"
+            "title": "Công cụ"
           },
           "resume": {
             "title": "Hồ sơ",
@@ -278,6 +320,48 @@
           "category": "Dự án Phân tích dữ liệu"
         }
       }
-        }
+        },
+        "certification": {
+      "title": "Chứng Chỉ"
+    },
+        "blog": {
+  "title": "Blog",
+  "post1": {
+    "category": "Sức khỏe",
+    "title": "Suy nghĩ tích cực, hành động tích cực",
+    "description": "Thói quen hàng ngày giúp tôi giữ tinh thần vui vẻ và tập trung"
+  },
+  "post2": {
+    "category": "Sức khỏe",
+    "title": "Hãy là chính mình!",
+    "description": "\"Chúng ta còn sống không?\""
+  },
+  "post3": {
+    "category": "Sức khỏe",
+    "title": "Trầm cảm",
+    "description": "Bạn có thể đang trải qua trầm cảm mà không nhận ra?"
+  },
+  "post4": {
+    "category": "Sức khỏe",
+    "title": "5 giai đoạn trưởng thành",
+    "description": "5 mức độ phát triển cá nhân của Robert Kegan: Bạn đang ở cấp độ nào?"
+  }
+},
+"contact": {
+    "title": "Liên hệ",
+    "form": {
+      "title": "Mẫu liên hệ",
+      "fullname": {
+        "placeholder": "Họ và tên"
+      },
+      "email": {
+        "placeholder": "Địa chỉ email"
+      },
+      "message": {
+        "placeholder": "Tin nhắn của bạn"
+      },
+      "submit": "Gửi tin nhắn"
+    }
+  }
   }
 }

@@ -616,29 +616,31 @@
       -->
 
       <article class="portfolio" data-page="portfolio">
-
+       
         <header>
-          <h2 class="h2 article-title">Portfolio</h2>
+
+          <h2 class="h2 article-title" data-translate="portfolio.title">Portfolio</h2>
         </header>
 
         <section class="projects">
-
+          
           <ul class="filter-list">
-
+           
             <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
+              <button class="active" data-filter-btn data-translate="portfolio.filters.all">All</button>
+           
+            </li>
+            
+            <li class="filter-item">
+              <button data-filter-btn data-translate="portfolio.filters.design">Design</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Design</button>
+              <button data-filter-btn data-translate="portfolio.filters.marketing">Marketing Projects</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Marketing Projects</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Data Analysis Projects</button>
+              <button data-filter-btn data-translate="portfolio.filters.dataAnalysis">Data Analysis Projects</button>
             </li>
 
           </ul>
@@ -646,144 +648,119 @@
           <div class="filter-select-box">
 
             <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
+              <div class="select-value" data-selecct-value data-translate="portfolio.selectCategory">Select category</div>
               <div class="select-icon">
                 <ion-icon name="chevron-down"></ion-icon>
+             
               </div>
-
+            
             </button>
 
             <ul class="select-list">
-
+              
               <li class="select-item">
-                <button data-select-item>All</button>
+                <button data-select-item data-translate="portfolio.filters.all">All</button>
               </li>
-
+              
               <li class="select-item">
-                <button data-select-item>Design</button>
+                <button data-select-item data-translate="portfolio.filters.design">Design</button>
               </li>
-
+              
               <li class="select-item">
-                <button data-select-item>Marketing Projects</button>
+                <button data-select-item data-translate="portfolio.filters.marketing">Marketing Projects</button>
               </li>
-
+              
               <li class="select-item">
-                <button data-select-item>Data Analysis Projects</button>
+                <button data-select-item data-translate="portfolio.filters.dataAnalysis">Data Analysis Projects</button>
+              
               </li>
-
+           
             </ul>
-
+          
           </div>
 
           <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="design">
+            <li class="project-item active" data-filter-item data-category="design">
               <a href="https://drive.google.com/file/d/1ROKP2uijEAd0fOBGyyeRXY3j-ObmWvb5/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-
+               
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/1.jpg" alt="poster 1" loading="lazy">
+                  <img src="./assets/images/1.jpg" alt="Poster 1" loading="lazy">
                 </figure>
-
-                <h3 class="project-title">Poster 1</h3>
-
-                <p class="project-category">Design</p>
-
+                <h3 class="project-title" data-translate="portfolio.projects.poster1.title">Poster 1</h3>
+                <p class="project-category" data-translate="portfolio.projects.poster1.category">Design</p>
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="design">
+            <li class="project-item active" data-filter-item data-category="design">
               <a href="https://drive.google.com/file/d/13fCC88zGEGx1x-40iPWWHXNb4K8zG-aV/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-
+               
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/Katinat.jpg" alt="katinat's catalogue" loading="lazy">
+                  <img src="./assets/images/Katinat.jpg" alt="Katinat's Catalogue" loading="lazy">
                 </figure>
-
-                <h3 class="project-title">Katinat's Catalogue</h3>
-
-                <p class="project-category">Design</p>
-
+                <h3 class="project-title" data-translate="portfolio.projects.katinat.title">Katinat's Catalogue</h3>
+                <p class="project-category" data-translate="portfolio.projects.katinat.category">Design</p>
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="design">
+            <li class="project-item active" data-filter-item data-category="design">
               <a href="https://drive.google.com/file/d/1K6X2NnGAR01SLbnZyDiZh9VAUrfk7Bac/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-
+               
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/Nike poster.jpg" alt="nike's poster" loading="lazy">
+                  <img src="./assets/images/Nike poster.jpg" alt="Nike's Poster" loading="lazy">
                 </figure>
-
-                <h3 class="project-title">Nike's poster</h3>
-
-                <p class="project-category">Design</p>
-
+                <h3 class="project-title" data-translate="portfolio.projects.nike.title">Nike's Poster</h3>
+                <p class="project-category" data-translate="portfolio.projects.nike.category">Design</p>
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="marketing projects">
+            <li class="project-item active" data-filter-item data-category="marketing">
               <a href="https://drive.google.com/file/d/1ZUGSR6ahaVGbNbJFVbFazbcdUfZ_n8xH/view?usp=sharing" target="_blank" rel="noopener noreferrer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/zhealth.jpg" alt="zhealth" loading="lazy">
+                  <img src="./assets/images/zhealth.jpg" alt="Zhealth" loading="lazy">
                 </figure>
-
-                <h3 class="project-title">Zhealth</h3>
-
-                <p class="project-category">Marketing Project</p>
-
+                <h3 class="project-title" data-translate="portfolio.projects.zhealth.title">Zhealth</h3>
+                <p class="project-category" data-translate="portfolio.projects.zhealth.category">Marketing Projects</p>
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="marketing projects">
+            <li class="project-item active" data-filter-item data-category="marketing">
               <a href="https://drive.google.com/file/d/1fMEB4MLZnaJQ0knibbsoLfapbddnYshv/view?usp=sharing" target="_blank" rel="noopener noreferrer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/z6565936737895_061ae2ca795754ec38e5fa6a8d98fa04.jpg" alt="mamfood" loading="lazy">
+                  <img src="./assets/images/z6565936737895_061ae2ca795754ec38e5fa6a8d98fa04.jpg" alt="Mam Food" loading="lazy">
                 </figure>
-
-                <h3 class="project-title">Mâm Food</h3>
-
-                <p class="project-category">Marketing Projects</p>
-
+                <h3 class="project-title" data-translate="portfolio.projects.mamFood.title">Mam Food</h3>
+                <p class="project-category" data-translate="portfolio.projects.mamFood.category">Marketing Projects</p>
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="data analysis projects">
+            <li class="project-item active" data-filter-item data-category="dataanalysis">
               <a href="https://drive.google.com/file/d/1UgBYxA-U8DoieZSyUWRWs3g4USqXaFYV/view?usp=sharing" target="_blank" rel="noopener noreferrer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/DataSense_Nhom8_Slides.jpg" alt="data analysis" loading="lazy">
+                  <img src="./assets/images/DataSense_Nhom8_Slides.jpg" alt="Data Analysis" loading="lazy">
                 </figure>
-
-                <h3 class="project-title">Data analysis</h3>
-
-                <p class="project-category">Data Analysis Projects</p>
-
+                <h3 class="project-title" data-translate="portfolio.projects.dataAnalysis.title">Data Analysis</h3>
+                <p class="project-category" data-translate="portfolio.projects.dataAnalysis.category">Data Analysis Projects</p>
               </a>
             </li>
 
@@ -853,7 +830,7 @@
       <article class="certification" data-page="certification">
 
         <header>
-          <h2 class="h2 article-title">Certification</h2>
+          <h2 class="h2 article-title" data-translate="certification.title">Certification</h2>
         </header>
 
         <section class="projects">
@@ -1108,7 +1085,7 @@
       <article class="blog" data-page="blog">
 
         <header>
-          <h2 class="h2 article-title">Blog</h2>
+          <h2 class="h2 article-title" data-translate="blog.title">Blog</h2>
         </header>
 
         <section class="blog-posts">
@@ -1125,16 +1102,16 @@
                 <div class="blog-content">
 
                   <div class="blog-meta">
-                    <p class="blog-category">Health</p>
+                    <p class="blog-category" data-translate="blog.post1.category">Health</p>
 
                     <span class="dot"></span>
 
                     <time datetime="2022-02-23">Feb 19, 2023</time>
                   </div>
 
-                  <h3 class="h3 blog-item-title">Think Positive, Do Positive</h3>
+                  <h3 class="h3 blog-item-title" data-translate="blog.post1.title">Think Positive, Do Positive</h3>
 
-                  <p class="blog-text">
+                  <p class="blog-text" data-translate="blog.post1.description">
                     How I Stay Positive: Daily Habits That Keep My Mind Happy & Focused.
                   </p>
 
@@ -1153,16 +1130,16 @@
                 <div class="blog-content">
 
                   <div class="blog-meta">
-                    <p class="blog-category">Health</p>
+                    <p class="blog-category" data-translate="blog.post2.category">Health</p>
 
                     <span class="dot"></span>
 
                     <time datetime="2022-02-23">Feb 13, 2023</time>
                   </div>
 
-                  <h3 class="h3 blog-item-title">Be Yourself!</h3>
+                  <h3 class="h3 blog-item-title" data-translate="blog.post2.title">Be Yourself!</h3>
 
-                  <p class="blog-text">
+                  <p class="blog-text" data-translate="blog.post2.description">
                     “Are we alive?”
                   </p>
 
@@ -1181,16 +1158,16 @@
                 <div class="blog-content">
 
                   <div class="blog-meta">
-                    <p class="blog-category">Health</p>
+                    <p class="blog-category" data-translate="blog.post3.category">Health</p>
 
                     <span class="dot"></span>
 
                     <time datetime="2022-02-23">Feb 10, 2023</time>
                   </div>
 
-                  <h3 class="h3 blog-item-title">Depression</h3>
+                  <h3 class="h3 blog-item-title" data-translate="blog.post3.title">Depression</h3>
 
-                  <p class="blog-text">
+                  <p class="blog-text" data-translate="blog.post3.description">
                     Could You Be Experiencing Depression Without Realizing It?
                   </p>
 
@@ -1209,16 +1186,16 @@
                 <div class="blog-content">
 
                   <div class="blog-meta">
-                    <p class="blog-category">Health</p>
+                    <p class="blog-category" data-translate="blog.post4.category">Health</p>
 
                     <span class="dot"></span>
 
                     <time datetime="2022-02-23">Feb 22, 2023</time>
                   </div>
 
-                  <h3 class="h3 blog-item-title">5 Stages of Growth</h3>
+                  <h3 class="h3 blog-item-title" data-translate="blog.post4.title">5 Stages of Growth</h3>
 
-                  <p class="blog-text">
+                  <p class="blog-text" data-translate="blog.post4.description">
                     Robert Kegan’s 5 Stages of Personal Growth: Which Level Are You At?
                   </p>
 
@@ -1244,7 +1221,7 @@
       <article class="contact" data-page="contact">
 
         <header>
-          <h2 class="h2 article-title">Contact</h2>
+          <h2 class="h2 article-title" data-translate="contact.title">Contact</h2>
         </header>
 
         <section class="mapbox" data-mapbox>
@@ -1257,7 +1234,7 @@
 
         <section class="contact-form">
 
-          <h3 class="h3 form-title">Contact Form</h3>
+          <h3 class="h3 form-title" data-translate="contact.form.title">Contact Form</h3>
 
           <form action="https://formspree.io/f/mqaqpjvg" method="POST" class="form" data-form>
 
@@ -1271,7 +1248,7 @@
 
             <button class="form-btn" type="submit" disabled data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
+              <span data-translate="contact.form.submit">Send Message</span>
             </button>
 
           </form>

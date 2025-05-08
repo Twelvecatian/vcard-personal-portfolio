@@ -158,37 +158,25 @@ navigationLinks.forEach((link) => {
   });
 });
 
-// Khởi tạo biến translations toàn cục
-let translations = {};
+// Khai báo biến translations ở phạm vi toàn cục
+let translations;
 
-// Hàm load translations từ file JSON
+// Tải file translations.json
 async function loadTranslations() {
   try {
     const response = await fetch('./assets/js/translations.json');
-    if (!response.ok) throw new Error('Không thể tải file translations');
     translations = await response.json();
     
-    // Áp dụng ngôn ngữ đã lưu hoặc mặc định
-    const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
-    await changeLanguage(savedLanguage);
-    return translations;
+    // Khởi tạo ngôn ngữ mặc định hoặc lấy từ localStorage
+    const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+    await changeLanguage(savedLang);
   } catch (error) {
-    console.error('Lỗi khi tải translations:', error);
-    return null;
+    console.error('Lỗi khi tải file translations:', error);
   }
 }
 
-// Đảm bảo translations được tải trước khi thay đổi ngôn ngữ
-async function initializeLanguage() {
-  translations = await loadTranslations();
-  if (!translations) {
-    console.error('Không thể khởi tạo translations');
-    return;
-  }
-}
-
-// Khởi tạo khi trang tải xong
-document.addEventListener('DOMContentLoaded', initializeLanguage);
+// Gọi hàm loadTranslations khi trang web tải xong
+document.addEventListener('DOMContentLoaded', loadTranslations);
 
 // Hàm thay đổi ngôn ngữ
 async function changeLanguage(lang) {
@@ -477,7 +465,113 @@ async function changeLanguage(lang) {
         console.error('Lỗi khi cập nhật Resume section:', error);
       }
     }
+    
+    // Cập nhật Blog section
+    if (translations[lang].blog) {
+      try {
+        // Cập nhật tiêu đề chính Blog
+        const blogTitle = document.querySelector('.article-title[data-translate="blog.title"]');
+        if (blogTitle) {
+          blogTitle.textContent = translations[lang].blog.title;
+        }
+    
+        // Cập nhật các bài viết blog
+        const blogPosts = document.querySelectorAll('.blog-post-item');
+        blogPosts.forEach((post, index) => {
+          const postNumber = index + 1;
+          const postData = translations[lang].blog[`post${postNumber}`];
+          
+          if (postData) {
+            // Cập nhật category
+            const category = post.querySelector('.blog-category[data-translate="blog.post' + postNumber + '.category"]');
+            if (category) {
+              category.textContent = postData.category;
+            }
+    
+            // Cập nhật title
+            const title = post.querySelector('.blog-item-title[data-translate="blog.post' + postNumber + '.title"]');
+            if (title) {
+              title.textContent = postData.title;
+            }
+    
+            // Cập nhật description
+            const description = post.querySelector('.blog-text[data-translate="blog.post' + postNumber + '.description"]');
+            if (description) {
+              description.textContent = postData.description;
+            }
+          }
+        });
+    
+      } catch (error) {
+        console.error('Lỗi khi cập nhật Blog section:', error);
+      }
+    }
+    // Cập nhật phần Contact
+    const contactTitle = document.querySelector('.contact .article-title');
+    if (contactTitle && translations[lang].contact.title) {
+      contactTitle.textContent = translations[lang].contact.title;
+    }
+
+    // Cập nhật form contact
+    const formTitle = document.querySelector('.form-title');
+    if (formTitle && translations[lang].contact.form.title) {
+      formTitle.textContent = translations[lang].contact.form.title;
+    }
+
+    // Cập nhật placeholders cho các input
+    const fullNameInput = document.querySelector('input[name="fullname"]');
+    if (fullNameInput && translations[lang].contact.form.fullname) {
+      fullNameInput.placeholder = translations[lang].contact.form.fullname.placeholder;
+    }
+
+    const emailInput = document.querySelector('input[name="email"]');
+    if (emailInput && translations[lang].contact.form.email) {
+      emailInput.placeholder = translations[lang].contact.form.email.placeholder;
+    }
+
+    const messageInput = document.querySelector('textarea[name="message"]');
+    if (messageInput && translations[lang].contact.form.message) {
+      messageInput.placeholder = translations[lang].contact.form.message.placeholder;
+    }
+
+    const submitButton = document.querySelector('[data-form-btn]');
+    if (submitButton && translations[lang].contact.form.submit) {
+      submitButton.textContent = translations[lang].contact.form.submit;
+    }
   } catch (error) {
     console.error('Lỗi khi thay đổi ngôn ngữ:', error);
   }
 }
+
+// Thêm event listener cho form submit
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
+  
+  // Lấy giá trị từ các input
+  const formData = {
+    fullname: document.querySelector('[data-form-input][name="fullname"]').value,
+    email: document.querySelector('[data-form-input][name="email"]').value,
+    message: document.querySelector('[data-form-input][name="message"]').value
+  };
+
+  try {
+    // Hiển thị thông báo gửi thành công
+    formBtn.textContent = "Sending...";
+    
+    // Giả lập gửi form (thay thế bằng API thực tế sau này)
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    // Reset form
+    form.reset();
+    formBtn.setAttribute("disabled", "");
+    formBtn.textContent = "Send Message";
+    
+    // Hiển thị thông báo thành công
+    alert("Message sent successfully!");
+
+  } catch (error) {
+    console.error("Error sending message:", error);
+    alert("Failed to send message. Please try again.");
+    formBtn.textContent = "Send Message";
+  }
+});
