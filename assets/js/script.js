@@ -396,6 +396,13 @@ async function changeLanguage(lang) {
         });
       });
     }
+    if (translations[lang].clients) {
+      // Cập nhật tiêu đề section
+      const clientsTittle = document.querySelector('.clients-title');
+      if (clientsTittle) {
+        clientsTittle.textContent = translations[lang].clients.title;
+      }
+    }
 
     // Sửa lỗi không thay đều tiêu đề sidebar
     const sidebarTitle = document.querySelector('.title');
