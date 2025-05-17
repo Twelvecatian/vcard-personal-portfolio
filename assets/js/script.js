@@ -1,6 +1,7 @@
 'use strict';
 
-
+data-goatcounter="https://yourusername.goatcounter.com/count"
+async src="//gc.zgo.at/count.js"
 
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
